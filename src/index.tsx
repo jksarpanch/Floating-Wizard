@@ -1,12 +1,12 @@
 import * as React from 'react'
 import './styles.scss'
 
-const { useState, useEffect } = React
+const {useState, useEffect} = React
 
 const Counter: React.FC<{
     count: number
     className: string
-}> = ({ count, className }) => (
+}> = ({count, className}) => (
     <div className={`counter ${className}`}>
         <p
             key={count}
@@ -21,7 +21,7 @@ export type ICounterProps = {
     className?: string
 }
 
-const App: React.FC<ICounterProps> = ({ className = '' }) => {
+const FloatingWizard: React.FC<ICounterProps> = ({className = ''}) => {
     const [count, setCount] = useState(0)
 
     useEffect(() => {
@@ -34,7 +34,7 @@ const App: React.FC<ICounterProps> = ({ className = '' }) => {
         return () => clearInterval(interval)
     }, [count, setCount])
 
-    return <Counter className={className} count={count} />
+    return <Counter className={className} count={count}/>
 }
 
-export default App
+export default FloatingWizard
